@@ -3,7 +3,7 @@ import { Button } from "../Button/Button";
 
 
 export const Count = ({initial = 0,  max }) => {
-  const [count, setCount] = useState(initial);
+  const [count, setCount] = useState(0);
 
   const increment = () => { 
     if(count === max) {
@@ -11,7 +11,6 @@ export const Count = ({initial = 0,  max }) => {
     }
     setCount(count +1);
    }
-
   const decrement = () => { 
     if(count === 0) {
       return setCount(0);
@@ -21,9 +20,9 @@ export const Count = ({initial = 0,  max }) => {
 
   return (
     <>
-      <Button text="+" variant={"btn-secondary"} functionClick={increment} />
+      <Button text="+" variant={"btn-danger"} onClick={increment} />
       <strong> {count} </strong>
-      <Button text="-" variant={"btn-secondary"} functionClick={decrement} />
+      <Button text="-" variant={"btn-danger"} onClick={decrement} />
     </>
   )
 }

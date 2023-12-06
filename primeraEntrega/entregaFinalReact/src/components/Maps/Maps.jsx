@@ -11,7 +11,7 @@ useEffect(() => {
     .then( resp => {{
         console.log(resp)
         setProducts(resp)
-    setIsLoading(!isLoading)
+        setIsLoading(!isLoading)
 }} )
     .catch(error => console.log(error))
 }, [])
@@ -20,7 +20,7 @@ useEffect(() => {
     
    {
            isLoading ? <h3>Cargando productos...</h3>:
-       products.map( product  => <Cards key ={product.id} name={product.name}description={product.description} /> )
+       products.map( product  => <Cards key ={product.id} name={product.name}description={product.description} stock={product.stock}/> )
     }
      </div>
     )
